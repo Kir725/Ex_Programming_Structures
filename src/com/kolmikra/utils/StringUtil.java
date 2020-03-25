@@ -1,6 +1,5 @@
 package com.kolmikra.utils;
 
-import java.util.Random;
 
 public class StringUtil {
     //Exercise 8;

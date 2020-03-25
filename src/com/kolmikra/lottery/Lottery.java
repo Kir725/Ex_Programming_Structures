@@ -3,6 +3,7 @@ package com.kolmikra.lottery;
 import java.util.*;
 
 public class Lottery {
+    private static final Random generator = new Random();
     private List<Integer> lotteryList = new ArrayList<>();
 
     public Lottery() {
@@ -18,15 +19,14 @@ public class Lottery {
     public List<Integer> getWinningCombs() {
         List<Integer> winningList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            winningList.add(lotteryList.get(new Random().nextInt(49)));
+            winningList.add(lotteryList.get(generator.nextInt(49)));
         }
         return winningList;
     }
 
     public void removeItems() {
-        Random gen = new Random();
         for (int i = 1; i < 7; i++) {
-            lotteryList.remove(gen.nextInt(49 - i));
+            lotteryList.remove(generator.nextInt(49 - i));
         }
     }
 
