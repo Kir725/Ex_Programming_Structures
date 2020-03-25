@@ -38,8 +38,13 @@ public class MagicSquare {
     }
 
     public static boolean isMagicSquare(int[][] square) {
-        if (square == null || square[0] == null) {
+        if (square == null) {
             return false;
+        }
+        for(int [] row: square){
+            if (row == null){
+                return false;
+            }
         }
         boolean isMagic = true;
         int[] summList = new int[square.length + square[0].length + 2];
